@@ -1,10 +1,24 @@
 package org.cg.camundabpm.AccountOpener;
 
-public class TaskStatus {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class TaskStatus {
+	
+	@Id
 	private String taskId;
 	private String taskName;
 	private String taskStatus;
+	private boolean managerIsApproved;
+
+	public boolean isManagerIsApproved() {
+		return managerIsApproved;
+	}
+
+	public void setManagerIsApproved(boolean managerIsApproved) {
+		this.managerIsApproved = managerIsApproved;
+	}
 
 	public String getTaskId() {
 		return taskId;

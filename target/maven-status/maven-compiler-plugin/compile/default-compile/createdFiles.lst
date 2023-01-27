@@ -4,4 +4,6 @@ org\cg\camundabpm\AccountOpener\ProcessConstants.class
 org\cg\camundabpm\AccountOpener\AccountWeb.class
 org\cg\camundabpm\AccountOpener\Account.class
 org\cg\camundabpm\AccountOpener\AccountDao.class
+org\cg\camundabpm\AccountOpener\TaskStatus.class
 org\cg\camundabpm\AccountOpener\DMLService.class
+org\cg\camundabpm\AccountOpener\TaskDao.class

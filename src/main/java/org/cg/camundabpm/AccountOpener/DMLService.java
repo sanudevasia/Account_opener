@@ -1,17 +1,17 @@
 package org.cg.camundabpm.AccountOpener;
 
-import java.util.Date;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Component
 public class DMLService {
 
 	@Autowired
 	private AccountDao accountDao;
+	
+	public boolean approval;
 
 	public int saveAccountData(DelegateExecution execution) throws Exception {
 		String name = (String) execution.getVariable("name");
@@ -33,6 +33,16 @@ public class DMLService {
 
 		Account account = accountDao.save(accountDetails);
 		return accountDetails.getRequestID();
+	}
+	
+	public void approved(boolean approval) {
+	
+		this.approval=approval;
+		
+	}
+	
+	public boolean approval() {
+		return this.approval;
 	}
 
 	public int updateAccountData(DelegateExecution execution) throws Exception {
